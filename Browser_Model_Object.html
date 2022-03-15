@@ -1,0 +1,86 @@
+<!--
+    The Browser Object Model (BOM) is used to interact with the browser.
+
+The default object of browser is window means you can call
+ all the functions of window by specifying window or directly.
+
+ You can use a lot of properties (other objects) defined underneath the window object like document,
+  history, screen, navigator, location, innerHeight, innerWidth,
+-->
+<script>
+    window.alert("Invalid Option !!");
+    window.alert("Type Correctly !!  ")
+</script>
+
+<!--
+    The window object represents a window in browser. An object of window is
+     created automatically by the browser.
+
+Window is the object of browser, it is not the object of javascript.
+ The javascript objects are string, array, date etc
+
+   METHOD OF WINDOW OBJECT
+   ------------------------
+
+alert()	displays the alert box containing message with ok button.
+
+confirm()	displays the confirm dialog box containing message with ok and cancel button.
+
+prompt()	displays a dialog box to get input from the user.
+
+open()	opens the new window.
+
+close()	closes the current window.
+
+setTimeout()	performs action after specified time like calling function, evaluating expressions etc.
+-->
+<script>
+    function msg(){
+        alert("Hello Alert Box");
+    }
+</script>
+<input type="button" value="click here" onclick="msg()" />
+
+<!-- confirm() -->
+<script>
+    function msg2(){
+        var v = confirm("Are You Sure ??");
+
+        if (v == true){
+            alert("OK");
+        }
+        else
+        alert("Cancle");
+    }
+</script>
+<input type="button" value="confirm" onclick="msg2()" />
+
+<!--Dialog box-->
+<script>
+    function msg3(){
+        var v = confirm("Who are You  ??");
+        alert("I am "+v);
+    }
+</script>
+<input type="button" value="dialog box " onclick="msg3()" />
+
+
+<!--Open()-->
+<script>
+    function msg4(){
+        open("http://www.javatpoint.com");
+    }
+</script>
+<input type="button" value="open javatpoint" onclick="msg4()" />
+
+
+<!--set Timeout -->
+<script>
+    function msg5(){
+        setTimeout(
+            function(){
+                alert("Welcome to javatpoint after 4 second")
+            },4000);
+    }
+</script>
+<input type="button" value="setTimeout()" onclick="msg5()" />

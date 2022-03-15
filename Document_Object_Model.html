@@ -1,0 +1,99 @@
+<!--
+The document object represents the whole html document.
+
+When html document is loaded in the browser, it becomes a document object.
+ It is the root element that represents the html document. It has properties and methods.
+ By the help of document object, we can add dynamic content to our web page.
+
+    Method of Documents
+    --------------------
+write("string")	writes the given string on the doucment.
+
+writeln("string")	writes the given string on the doucment with newline character at the end.
+
+getElementById()	returns the element having the given id value.
+
+getElementsByName()	returns all the elements having the given name value.
+
+getElementsByTagName()	returns all the elements having the given tag name.
+
+getElementsByClassName()	returns all the elements having the given class name.
+-->
+
+<script>
+    let d = document;
+    document.write(d);
+    document.write("<br> d is type of : "+ typeof d );
+    document.write("<br> d.all  : "+d.all );
+    Array.from(d).forEach(function(item){
+        document.write("<br>"+item);
+        console.log(item);
+    });
+    document.write("<br> d is type of : "+ typeof d )
+</script>
+
+<script>
+
+    function printValue(){
+        var name = document.form1.name.value;
+        alert("Welcome : "+name);
+    }
+</script>
+
+<form name="form1">
+    Enter Name : <input type="text" name="name"/>
+    <input type="button" onclick="printValue()" value="print name"/>
+</form>
+
+<!--document.getElementById() method-->
+<!--
+    The document.getElementById() method returns the element of specified id.
+
+In the previous page, we have used document.form1.name.value to get the value of the 
+input value. Instead of this, we can use document.getElementById()
+method to get value of the input text. But we need to define id for the input field.
+-->
+
+<script>
+    function getcube(){
+        var number = document.getElementById("number1").value;
+        alert(number*number*number);
+    }
+</script>
+
+<html>
+    <body>
+        <div class="card">
+            <div class="card-body">
+                <form>
+                    <label>Enter Number  :</label>
+                    <input type="text" id="number1" name="Num" /><br>
+                    <input type="button" value="cube" onclick="getcube()" />
+                </form>
+            </div>
+          </div>
+    </body>
+</html>
+
+<!--GetElementsByClassName()
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The getElementsByClassName() method is used for selecting or getting the elements through their class name value. 
+This DOM method returns an array-like object that consists of all the elements having the 
+specified classname. On calling the getElementsByClassName() method on any particular element,
+ it will search the whole document and will return only those elements which match the specified or given class name.
+-->
+<script>
+    function getByclassName(){
+        var proj = document.getElementsByClassName("card01");
+        document.write("On calling proj , it will return <br>"+proj)
+    }
+</script>
+
+<html>
+    <body>
+        <div class="card01">
+            Wasim is making JavaScript Projects
+            
+        </div>
+    </body>
+</html>

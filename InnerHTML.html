@@ -1,0 +1,69 @@
+<!--
+    The innerHTML property can be used to write the dynamic
+     html on the html document.
+
+It is used mostly in the web pages to generate the dynamic
+ html such as registration form,
+ comment form, links .
+
+-->
+
+<p style="border: 2px solid ;" onclick="myfunc(this)" > Test </p>
+
+<input  type="text" onclick="myfunc1(this)" name=""/>
+
+<script>
+    function myfunc(myvar){
+        console.log("Testing");
+        console.log(myvar);
+        console.log(typeof myvar);
+
+    //    myvar.innerHTML = "<h2>Hello Wasim </h2>";
+        myvar.innerText = "Hello  Salma ";
+    }
+
+    function myfunc1(curEle){
+        document.write(curEle);
+        console.log(curEle);
+//        curEle.innerHTML = 9000;  
+//        curEle.innerText= 100;
+         curEle.value=3400;
+    }
+</script>
+
+<!--
+    form elemnts (value=)
+     text
+     radio
+     checkbox
+     textarea
+     password      
+
+     non form element (innerHTML or innerText)
+     p, div , h1-6 , span
+-->
+<!--
+The innerText property can be used to write the dynamic text on
+the html document. Here, text will not be interpreted as html text but a normal text.
+
+It is used mostly in the web pages to generate the dynamic content such as writing the
+ validation message, password strength etc.
+-->
+<script>
+    function validate(){
+        var msg ;
+        if (document.myForm.userPass.value.length>5){
+            msg = "Good";
+        }
+        else{
+            msg = "poor";
+        }
+        document.getElementById('mylocation').innerText = msg;
+    }
+</script>
+
+<form name="myForm">
+    <input type="password" value="" name="userPass" onkeyup="validate()">
+    <label>Strength : <span id="mylocation">No Strength </span>
+    </label>
+</form>

@@ -1,0 +1,49 @@
+<!--
+    Cookies are small text files that a browser stored in the visitor's computer . a cookie is
+    Basically a string  name - value pair separated by semi colon;
+
+cookies is used to maintaining state on client side.
+
+cookies is stored on clients machine as a text file.
+whenever user visit again , the website read the data from the cookies,.
+ two type of cookies
+
+ 1. Session Cookies-->
+ 2.Persistent Cookies-->
+
+ Http is stateless protocol 
+-->
+<script>
+localStorage.setItem("Wasim","399");
+document.write(localStorage.getItem("Wasim"));
+
+document.cookie = "Sahithi=300 ; expires="+new Date(2022 , 03 , 16).toUTCString()
+</script>
+
+<select id="ddlTheme"  onchange="setColorCookie()">
+    <option value="select Color">Select Color</option>
+    <option value="red">Red</option>
+    <option value="green">Green</option>
+    <option value="#659DBD">lightBlue</option>
+    <option value="#DAAD86">grey</option>
+    <option value="#8D8741">light brown</option>
+    <option value="#FBEEC1">light Grey</option>
+</select>
+
+<script>
+    window.onload = function(){
+        if(document.cookie.length != 0 ){
+            var nameValueArray= document.cookie.split("=");
+            document.bgColor=nameValueArray[1];
+            document.getElementById("ddlTheme").value = nameValueArray[1];
+        }
+    }
+    function setColorCookie(){
+        var selectedColor = document.getElementById("ddlTheme").value;
+        if(selectedColor != "Select Color")
+        {
+            document.bgColor= selectedColor;
+            document.cookie ="color="+selectedColor+"; expires=fri, 5 aug 2022 01:00:00 UTC;";
+        }
+    }
+</script>

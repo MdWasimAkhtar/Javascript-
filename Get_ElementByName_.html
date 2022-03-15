@@ -1,0 +1,24 @@
+<!--
+The document.getElementsByName() method returns all the element of specified name.
+
+The syntax of the getElementsByName() method is given below:
+
+document.getElementsByName("name")  
+-->
+<script>
+    function total_Elements(){
+        var all_Gender = document.getElementsByName("My_Gender").values;
+        alert("My Gender is :"+all_Gender)
+    }
+</script>
+
+<form>
+    <label>Male</label>
+    <input type="radio" name="gender" value="Male" />
+    <label>Female: </label>
+    <input type="radio" name="gender" value="Female" />
+
+    <input  type="button" onclick="total_Elements()" value="My_Gender" />
+</form>
+
+<!--document.getElementsByTagName() method-->

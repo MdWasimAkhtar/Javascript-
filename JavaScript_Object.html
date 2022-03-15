@@ -1,0 +1,118 @@
+<!--
+JavaScript is an object-based language. Everything is an object in JavaScript.
+
+JavaScript is template based not class based. Here, we don't create class to get the object. But, we direct create objects.
+
+Creating Objects in JavaScript
+There are 3 ways to create objects.
+
+By object literal
+By creating instance of Object directly (using new keyword)
+By using an object constructor (using new keyword)
+
+-->
+<!-- JavaScript Object by using Object Literals-->
+<script>
+    emp = {id : 102 , name :"Md Wasim Akhtar",salary:50000}
+    document.write("emp id : "+emp.id+"  , name : "+emp.name+"  , salary :"+emp.salary+'\n')
+    
+    document.write("\n"+ typeof emp)
+</script>
+<br>
+
+<!--2) By creating instance of Object -->
+<script>
+    var emp1 = new Object();
+    emp1.id=12221
+    emp1.name="Nagaratna C "
+    emp1.salary="30000"
+
+    document.write(`emp id : ${emp1.id} , Name : ${emp1.name} `)
+</script>
+
+<!--3) By using an Object constructor -->
+<br>
+<br>
+<script>
+    function emp2(id , name , salary){
+        this.id = id ;
+        this.name = name ;
+        this.salary = salary;
+    }
+    e1 = new emp2(13331,"Sahithi",340000)
+
+    function display(){
+        document.write(` emp id : ${e1.id} , emp_Name : ${e1.name} , salary: ${e1.salary} `)
+    }
+    display();
+</script>
+<br>
+<!-- We can define method in JavaScript object. But before defining method, 
+        we need to add property in the function with same name as method -->
+
+<script>
+    function myName(name){
+        this.name= name;
+
+        this.changeName = changeName;
+
+        function changeName(otherName){
+            this.name = otherName;
+            document.write(`<br> my Local  Name is ${this.name} `);
+        }
+
+        this.text =  function(){
+        document.write(`<br> MY_NAME  : ${this.name}`)
+    }
+    document.write("is This Working "+this.name)
+    }
+
+    e2 = new myName("Wasim");
+    e2.text;  
+    e2.changeName("Wasi akhtar ");
+</script>
+
+<!--JavaScript Object Methods-->
+
+<!--
+1	Object.assign()	This method is used to copy enumerable and own properties from a source object to a target object
+
+2	Object.create()	This method is used to create a new object with the specified prototype object and properties.
+
+3	Object.defineProperty()	This method is used to describe some behavioral attributes of the property.
+
+4	Object.defineProperties()	This method is used to create or configure multiple object properties.
+
+5	Object.entries()	This method returns an array with arrays of the key, value pairs.
+
+6	Object.freeze()	This method prevents existing properties from being removed.
+
+7	Object.getOwnPropertyDescriptor()	This method returns a property descriptor for the specified property of the specified object.
+
+8	Object.getOwnPropertyDescriptors()	This method returns all own property descriptors of a given object.
+
+9	Object.getOwnPropertyNames()	This method returns an array of all properties (enumerable or not) found.
+
+10	Object.getOwnPropertySymbols()	This method returns an array of all own symbol key properties.
+
+11	Object.getPrototypeOf()	This method returns the prototype of the specified object.
+
+12	Object.is()	This method determines whether two values are the same value.
+
+13	Object.isExtensible()	This method determines if an object is extensible
+
+14	Object.isFrozen()	This method determines if an object was frozen.
+
+15	Object.isSealed()	This method determines if an object is sealed.
+
+16	Object.keys()	This method returns an array of a given object's own property names.
+
+17	Object.preventExtensions()	This method is used to prevent any extensions of an object.
+
+18	Object.seal()	This method prevents new properties from being added and marks all existing properties as non-configurable.
+
+19	Object.setPrototypeOf()	This method sets the prototype of a specified object to another object.
+
+20	Object.values()	This method returns an array of values.
+
+-->

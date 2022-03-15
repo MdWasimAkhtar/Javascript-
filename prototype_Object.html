@@ -1,0 +1,35 @@
+<!--
+    JavaScript is a prototype-based language that facilitates the objects 
+    to acquire properties and features from one another. Here, each object contains a prototype object.
+
+In JavaScript, whenever a function is created the prototype property is added to that
+ function automatically. This property is a prototype object that holds a constructor property.
+
+-->
+<script>
+    var Mobile = function(mob_name , mob_color , price){
+        this.mob_name = mob_name;
+        this.mob_color = mob_color;
+        this.price = price;
+
+        this.fulldetails = function(){
+            return this.mob_name+" "+this.mob_color+", Price: "+this.price;
+        }
+    }
+    Mobile.prototype.display= function(){
+        return " Mobile Name : "+this.mob_name+" color :"+this.mob_color+"  price: "+this.price;
+    }
+
+    var samsung = new Mobile("galaxy","golden",45000);
+    document.write(samsung.fulldetails()+"<br>");
+   
+    var Nokia = new Mobile("nokia7300","purple",3400);
+    document.write(Nokia.fulldetails()+"<br><br><br>")
+
+    var OnePlus = new Mobile("One Plus ","lava",50000);
+    document.write(OnePlus.fulldetails()+"<br><br>")
+
+    document.write(samsung.display()+"<br>");
+    document.write(Nokia.display()+"<br> ");
+    document.write(OnePlus.display()+"<br>");
+</script>

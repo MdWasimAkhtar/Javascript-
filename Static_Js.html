@@ -1,0 +1,65 @@
+<!--
+    Static keyword in JavaScript: The static keyword is used to define 
+    a static method or property of a class. To call the static method we
+    do not need to create an instance or object of the class.
+
+Static variable in JavaScript: We used the static keyword to make a variable
+ static just like the constant variable is defined using the const keyword.
+  It is set at the run time and such type of variable works as a global variable.
+   We can use the static variable anywhere. The value of the static variable can be reassigned,
+    unlike the constant variable.
+
+Why we create a static variable in JavaScript: We create a static variable
+ in JavaScript to prevent replication, fixed-configuration, and it is also useful for caches.
+ 
+JavaScript static Method
+---------------------------
+
+The JavaScript provides static methods that belong to the class instead of an instance of that class.
+ So, an instance is not required to call the static method. These methods are called directly on the class itself.
+
+Points to remember
+The static keyword is used to declare a static method.
+
+The static method can be of any name.
+
+A class can contain more than one static method.
+
+If we declare more than one static method with a similar name, the JavaScript always invokes the last one.
+
+The static method can be used to create utility functions.
+
+We can use this keyword to call a static method within another static method.
+
+We cannot use this keyword directly to call a static method within the non-static method. In such case,
+we can call the static method either using the class name or as the property of the constructor.
+-->
+
+<script>
+    class Example{
+        static x1 = 100;
+        static CollegeName = "S.E.A College"
+        static companyName= "Larson&turbo";
+        num = 1000;
+
+        //static method
+        static static_Method(){
+            var e1 = new Example();
+            document.write(Example.x1+1000+e1.num+" Rs need to buy head phone <br>  "+Example.CollegeName +"<br>");
+            document.write("e1.num value :   "+e1.num);
+            return 'static method has been called ' ;
+        }
+        add(){
+            let x2 = 230;
+//            document.write("e1.num value :   "+e1.num); e1 is not define
+            document.write("The value : "+Example.x1+x2);
+        }
+    }
+    document.write(Example.static_Method()+"<br>");
+    document.write(Example.x1)
+    ex1 = new Example();
+    ex1.add();
+    document.write("<br>");
+    document.write("Examp.num , num is a non_static Variable:   "+Example.num+"<br>")
+    console.log(Example.x1)
+</script>
